@@ -4,13 +4,21 @@ import s from "./style.module.css";
 import { Input } from "components/Input/Input";
 import { AuthLayout } from "Layouts/AuthLayout/AuthLayout";
 import { useState } from "react";
+import { AuthAPI } from "api/auth";
+import { setUser } from "store/auth/auth-slice";
+import { useDispatch } from "react-redux";
 
 export function Signin() {
 	const [email, setEmail] = useState("");
 	const [password, setPassword] = useState("");
+	const dispatch = useDispatch();
 
-	const submit = (e) => {
+	const submit = async (e) => {
 		e.preventDefault();
+		try {
+			const user = await AuthAPI.signin(email, password);
+			dispatch(setUser(user));
+		} catch (err) {}
 	};
 
 	const form = (
