@@ -1,11 +1,21 @@
-import { useSelector } from "react-redux";
+import { NoteAPI } from "api/note-api";
+import { useDispatch, useSelector } from "react-redux";
 import s from "./style.module.css";
 import { TextCard } from "components/TextCard/TextCard";
 import { useNavigate } from "react-router-dom";
+import { deleteNote } from "store/notes/notes-slice";
 
-export function NoteList() {
-	const noteList = useSelector((store) => store.noteSlice.noteList);
+export function NoteList({ noteList }) {
 	const navigate = useNavigate();
+	const dispatch = useDispatch();
+
+	async function deleteNote_(note) {
+		if (window.confirm("Delete Note?")) {
+			NoteAPI.deleteById(note.id);
+			dispatch(deleteNote(note));
+		}
+	}
+
 	return (
 		<div className={`row justify-content-center`}>
 			{noteList.map((note) => {
@@ -16,7 +26,7 @@ export function NoteList() {
 							subtitle={note.created_at}
 							content={note.content}
 							onClick={() => navigate("/note/" + note.id)}
-							onClickTrash={() => alert("onClickTrash")}
+							onClickTrash={() => deleteNote_(note)}
 						/>
 					</div>
 				);

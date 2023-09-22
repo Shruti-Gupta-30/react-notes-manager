@@ -1,39 +1,27 @@
 {
   "notes": [
     {
-      "id": 1,
-      "title": "A title",
-      "content": "Bla bla",
-      "created_at": "01/01/2023"
+      "title": "creating",
+      "content": "created",
+      "created_at": "23/09/2023",
+      "id": 1
     },
     {
-      "title": "A new note",
-      "content": "Some note content",
-      "created_at": "17/09/2023",
+      "title": "shruti",
+      "content": "search",
+      "created_at": "23/09/2023",
       "id": 2
     },
     {
-      "title": "fjehdujrehg",
-      "content": "jfweijglirhgerjgvr",
-      "created_at": "20/09/2023",
-      "id": 3
-    },
-    {
-      "title": "firstttt",
-      "content": "something I want tobe happy about4oitghnujv",
-      "created_at": "20/09/2023",
-      "id": 4
-    },
-    {
-      "title": "",
-      "content": "",
-      "created_at": "20/09/2023",
+      "title": "srishti",
+      "content": "hehehhe",
+      "created_at": "23/09/2023",
       "id": 5
     },
     {
-      "title": "helllo jiii no error",
-      "content": "my error gone",
-      "created_at": "20/09/2023",
+      "title": "srishti shreshth",
+      "content": "just having fun now",
+      "created_at": "23/09/2023",
       "id": 6
     }
   ]
