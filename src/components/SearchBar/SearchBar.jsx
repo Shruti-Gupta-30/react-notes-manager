@@ -1,4 +1,5 @@
 import s from "./style.module.css";
+import { Input } from "components/Input/Input";
 import { Search as SearchIcon } from "react-bootstrap-icons";
 
 export function SearchBar({ onTextChange, placeholder }) {

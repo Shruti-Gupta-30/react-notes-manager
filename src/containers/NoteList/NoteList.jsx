@@ -1,4 +1,4 @@
-import { NoteAPI } from "api/note-api";
+import { NoteAPI } from "api/note";
 import { useDispatch, useSelector } from "react-redux";
 import s from "./style.module.css";
 import { TextCard } from "components/TextCard/TextCard";
