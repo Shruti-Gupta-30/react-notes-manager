@@ -6,7 +6,7 @@ import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 
 export function NoteBrowse(props) {
-	const noteList = useSelector((store) => store.noteSlice.noteList);
+	const noteList = useSelector((store) => store.notesSlice.noteList);
 	const [searchTerm, setSearchTerm] = useState("");
 
 	const filteredNoteList = noteList.filter((note) => {

@@ -29,4 +29,4 @@ export const noteSlice = createSlice({
 
 export const { setNoteList, addNote, updateNote, deleteNote } =
 	noteSlice.actions;
-export const noteReducer = noteSlice.reducer;
+export const notesReducer = noteSlice.reducer;

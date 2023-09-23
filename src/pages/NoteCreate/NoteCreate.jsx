@@ -8,12 +8,13 @@ import { addNote } from "store/notes/notes-slice";
 export function NoteCreate() {
 	const dispatch = useDispatch();
 	const navigate = useNavigate();
+
 	const submit = async (formValues) => {
-		const createNote = await NoteAPI.create({
+		const createdNote = await NoteAPI.create({
 			...formValues,
 			created_at: new Date().toLocaleDateString(),
 		});
-		dispatch(addNote(createNote));
+		dispatch(addNote(createdNote));
 		alert("The note has been created");
 		navigate("/");
 	};
