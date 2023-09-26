@@ -40,5 +40,3 @@ export function NoteBrowse(props) {
 		</>
 	);
 }
-
-export const ProtectedNoteBrowse = withAuthRequired(NoteBrowse);

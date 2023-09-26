@@ -1,7 +1,7 @@
+import { combineReducers, configureStore } from "@reduxjs/toolkit";
 import { notesReducer } from "store/notes/notes-slice";
 import { authReducer } from "store/auth/auth-slice";
 
-import { combineReducers, configureStore } from "@reduxjs/toolkit";
 import storage from "redux-persist/lib/storage";
 import {
 	persistStore,

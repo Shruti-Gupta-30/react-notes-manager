@@ -24,5 +24,3 @@ export function NoteCreate() {
 		</>
 	);
 }
-
-export const ProtectedNoteCreate = withAuthRequired(NoteCreate);

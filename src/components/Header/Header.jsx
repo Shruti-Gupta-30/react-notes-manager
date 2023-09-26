@@ -4,13 +4,13 @@ import s from "./style.module.css";
 import logoSrc from "assets/images/logo.png";
 import { Link, useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
-import { selectUser } from "store/auth/auth-selectors";
 import { AuthAPI } from "api/auth";
 import { setUser } from "store/auth/auth-slice";
 
 export function Header() {
 	const navigate = useNavigate();
-	const user = useSelector(selectUser);
+	const user = useSelector((store) => store.authSlice.auth.user);
+
 	const dispatch = useDispatch();
 
 	const signout = () => {

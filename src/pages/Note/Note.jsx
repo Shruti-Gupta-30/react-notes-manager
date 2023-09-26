@@ -45,5 +45,3 @@ export function Note(props) {
 		</>
 	);
 }
-
-export const ProtectedNote = withAuthRequired(Note);
