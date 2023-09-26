@@ -5,11 +5,10 @@ import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate, useParams } from "react-router-dom";
 import { deleteNote, updateNote } from "store/notes/notes-slice";
-
 export function Note(props) {
 	const { noteId } = useParams();
 	const note = useSelector((store) =>
-		store.noteSlice.noteList.find((note) => note.id === noteId)
+		store.notesSlice.noteList.find((note) => note.id === noteId)
 	);
 	const navigate = useNavigate();
 	const dispatch = useDispatch();
@@ -22,26 +21,26 @@ export function Note(props) {
 	};
 
 	async function deleteNote_() {
-		if (window.confirm("Delete Note?")) {
+		if (window.confirm("Delete note ?")) {
 			NoteAPI.deleteById(note.id);
 			dispatch(deleteNote(note));
 			navigate("/");
 		}
 	}
-
 	return (
 		<>
-			{" "}
 			{note && (
 				<NoteForm
 					isEditable={isEditable}
-					title={isEditable ? "Edit Note" : note.title}
+					title={isEditable ? "Edit note" : note.title}
 					note={note}
 					onClickDelete={deleteNote_}
 					onClickEdit={() => setIsEditable(!isEditable)}
 					onSubmit={isEditable && submit}
 				/>
-			)}{" "}
+			)}
 		</>
 	);
 }
+
+export const ProtectedNote = withAuthRequired(Note);

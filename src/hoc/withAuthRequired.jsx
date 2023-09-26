@@ -11,6 +11,7 @@ export function withAuthRequired(Component) {
 			if (!user) {
 				navigate("/signin");
 			}
+			// eslint-disable-next-line react-hooks/exhaustive-deps
 		}, [user]);
 
 		return user && <Component />;
