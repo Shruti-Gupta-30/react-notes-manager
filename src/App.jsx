@@ -17,11 +17,7 @@ export function App() {
 		dispatch(setNoteList(noteList));
 	}
 	useEffect(() => {
-		const unsub = NoteAPI.onShouldSyncNotes(fetchNotes);
-		return () => {
-			unsub();
-		};
-		// eslint-disable-next-line react-hooks/exhaustive-deps
+		fetchNotes();
 	}, []);
 
 	return (
