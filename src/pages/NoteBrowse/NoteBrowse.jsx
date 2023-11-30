@@ -14,7 +14,11 @@ export function NoteBrowse(props) {
 			.trim()
 			.toUpperCase()
 			.includes(searchTerm.trim().toUpperCase());
-		return containsTitle;
+		const containsContent = note.content
+			.trim()
+			.toUpperCase()
+			.includes(searchTerm.trim().toUpperCase());
+		return containsTitle || containsContent;
 	});
 
 	return (
